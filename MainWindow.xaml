@@ -1,0 +1,75 @@
+﻿<Window x:Class="VeyfonAI_part2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="VeyfonAI - Cybersecurity Awareness"
+        Height="650"
+        Width="900"
+        Background="#1E1E1E"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid>
+
+        <!-- START SCREEN -->
+        <Grid x:Name="StartupScreen">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                <TextBlock Text="VeyfonAI"
+                           Foreground="#00FF00"
+                           FontSize="60"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center"/>
+
+                <TextBox x:Name="txtName"
+                         Width="250"
+                         FontSize="20"
+                         Margin="0,20"
+                         KeyDown="txtName_KeyDown"/>
+
+                <Button Content="START"
+                        Width="120"
+                        Background="#00FF00"
+                        Click="btnStart_Click"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- CHAT SCREEN -->
+        <Grid x:Name="ChatScreen" Visibility="Collapsed">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ScrollViewer Grid.Row="0" Margin="10">
+                <TextBlock x:Name="txtChatHistory"
+                           Foreground="White"
+                           TextWrapping="Wrap"/>
+            </ScrollViewer>
+
+            <!-- INPUT -->
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10">
+
+                <TextBox x:Name="txtInput"
+                         Width="650"
+                         KeyDown="txtInput_KeyDown"/>
+
+                <Button Content="Send"
+                        Width="100"
+                        Click="btnSend_Click"/>
+            </StackPanel>
+
+            <!-- FEATURE BUTTONS -->
+            <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10">
+
+                <Button Content="Tasks" Click="BtnTasks_Click" Width="100"/>
+                <Button Content="Quiz" Click="BtnQuiz_Click" Width="100"/>
+                <Button Content="Activity Log" Click="BtnLog_Click" Width="120"/>
+                <Button Content="View Tasks" Click="BtnViewTasks_Click" Width="120"/>
+
+            </StackPanel>
+
+        </Grid>
+
+    </Grid>
+</Window>
